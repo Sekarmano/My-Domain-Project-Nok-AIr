@@ -12,7 +12,7 @@ public class PassengerDetailsPage  extends BaseClass {
 	@FindBy(xpath="//p[text()='Contact Information']")
 	private WebElement downmr;
 	
-	@FindBy(id="ddlTitle2-button")
+	@FindBy(xpath="//span[text()='Please select']")
 	private WebElement select;
 	
 	@FindBy(id="ui-id-2")

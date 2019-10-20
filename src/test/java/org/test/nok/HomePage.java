@@ -22,9 +22,9 @@ public class HomePage extends BaseClass{
 	@FindBy(xpath="//input[@placeholder='Select arrival airport']")
 	private WebElement to;
 	
-	@FindBy(xpath="(//span[text()='Chiang Mai'])[2]")
+	@FindBy(xpath="(//span[text()='Krabi'])[2]")
 	private WebElement des;
-//	Chiang Mai (CNX)
+//	Krabi
 	
 	@FindBy(id="departureDateText")
 	private WebElement departDate;

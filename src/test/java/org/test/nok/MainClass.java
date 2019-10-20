@@ -18,7 +18,8 @@ public class MainClass extends BaseClass{
 	public static void main(String[] args) throws InterruptedException, AWTException {
 		launchBrowser();
 		loadUrl("https://www.nokair.com/");
-	
+		
+	driver.manage().window().maximize();
 				
 		HomePage h=new HomePage();
 		Thread.sleep(5000);
@@ -33,13 +34,24 @@ public class MainClass extends BaseClass{
 		btnClick(h.getOneWay());
 		btnClick(h.getCookiee());
 		btnClick(h.getFrom());
-		type(h.getFrom(), "Bangkok (Don Mueang) (DMK)");
+		Thread.sleep(5000);
+		Actions a=new Actions(driver);
+		a.moveToElement(h.getBang()).perform();
+		btnClick(h.getBang());
+		
+//		type(h.getFrom(), "Bangkok (Don Mueang) (DMK)");
 		btnClick(h.getTo());
-		type(h.getTo(), "Krabi (KBV)");
+		a.moveToElement(h.getDes()).perform();
+		btnClick(h.getDes());
+//		type(h.getTo(), "Krabi (KBV)");
 		btnClick(h.getDepartDate());
-		Thread.sleep(20000);
-//		btnClick(h.getCurrencyType());
-//		btnClick(h.getInr());
+		a.moveToElement(h.getDate()).perform();
+		btnClick(h.getDate());
+		
+		Thread.sleep(2000);
+		a.moveToElement(h.getCurrencyType()).perform();
+		btnClick(h.getCurrencyType());
+		btnClick(h.getInr());
 //		JavascriptExecutor js=(JavascriptExecutor)driver;
 //		js.executeScript("arguments[0].click();", h.getDate());
 //		
@@ -61,16 +73,15 @@ public class MainClass extends BaseClass{
 			btnClick(f.getAmount());
 			Thread.sleep(3000);
 			scrollDown(f.getBtom());
-			
-			
 			btnClick(f.getCtnue());
-					
-		
+				
 			PassengerDetailsPage p=new PassengerDetailsPage();
 //			scrollDown(p.getDownmr());
-			Thread.sleep(5000);
-//     		btnClick(p.getSelect());
+//			Thread.sleep(5000);
+//			a.moveToElement(p.getSelect()).perform();
+//			btnClick(p.getSelect());
 //			btnClick(p.getMr());
+			
 			Robot n=new Robot();
 //			n.keyPress(KeyEvent.VK_KP_DOWN);
 //			n.keyRelease(KeyEvent.VK_KP_DOWN);
